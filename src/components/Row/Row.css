@@ -1,0 +1,50 @@
+.submit{
+  background: transparent;
+  height: inherit;
+  width: auto;
+}
+.status-box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.status-box .el-row{
+  display: flex;
+}
+.input-button{
+  background: white
+}
+.button-row{
+  display: flex;
+  border: 1px solid;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.status-row{
+  width: 100%;
+}
+.show{
+  color: green !important;
+}
+.hide{
+  color: transparent !important;
+}
+.input-row button {
+  padding: 15px;
+}
+
+.status-row i, .status-row img{
+  margin: 2px 5px 2px 2px;
+}
+.button-row button{
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
