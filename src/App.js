@@ -58,6 +58,12 @@ class App extends React.Component {
       selectedColor: 'yellow',
     })
   }
+  showRules(){
+    alert('Try to guess the pattern, in both order and color, within ten turns. \nAfter submitting a row,' + 
+      'a small black peg is placed for each code peg from the guess which is correct in both color and position.' + 
+      '\nA white peg indicates the existence of a correct color code peg placed in the wrong position.' + 
+      '\nA white peg with cross in between indicates the existence of a wrong color peg.');
+  }
   onButtonClick(rowId,buttonId){
     let rowValues = this.state.rowValues;
     rowValues[rowId]['values'][buttonId - 1] = this.state.colors.indexOf(this.state.selectedColor);
@@ -99,7 +105,11 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
+          <h1>React MASTERMIND</h1>
+          <h3 onClick={() => this.showRules()}>See Rules</h3>
+        </div>
+        <header className="App-content">
           <h1>Guess the pattern</h1>
           <div className="container">
             <div>
@@ -118,7 +128,11 @@ class App extends React.Component {
               {
                 this.state.colors.map((color,index) => {
                   return (
-                    <button key={index} className="" style={{background: color}} onClick={this.selectColor.bind(this,color)} />
+                    <button key={index} className="" style={{
+                      background: color,
+                      border: color === this.state.selectedColor ? '5px solid white' : 'none'
+                    }} 
+                      onClick={this.selectColor.bind(this,color)} />
                   )
                 })
               }
